@@ -2,7 +2,6 @@ package com.example.retrofittut.data
 
 import com.example.retrofittut.data.model.Products
 import retrofit2.http.GET
-import retrofit2.http.Query
 
 interface Api {
 
