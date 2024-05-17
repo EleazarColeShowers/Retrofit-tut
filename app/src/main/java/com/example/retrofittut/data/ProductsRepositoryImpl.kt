@@ -6,9 +6,9 @@ import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
 import java.io.IOException
 
-class ProductRepositoryImpl(
+class ProductsRepositoryImpl(
     private val api: Api
-): ProductRepository {
+): ProductsRepository {
     override suspend fun getProductList(): Flow<Result<List<Product>>> {
         return flow {
             val productsFromApi= try {
