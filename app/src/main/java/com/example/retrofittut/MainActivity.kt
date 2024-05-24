@@ -5,6 +5,7 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -33,6 +34,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import coil.compose.AsyncImagePainter
+import coil.compose.rememberAsyncImagePainter
+import coil3.request.ImageRequest
+import coil3.size.Size
 import com.example.retrofittut.data.ProductsRepositoryImpl
 import com.example.retrofittut.data.model.Product
 import com.example.retrofittut.presentation.ProductsViewModel
@@ -101,6 +106,7 @@ class MainActivity : ComponentActivity() {
 //TODO: fix coil import issue
 @Composable
 fun Product(product: Product) {
+    //create an image state that tells us whether we have image or not.
     val imageState = rememberAsyncImagePainter(
         model = ImageRequest.Builder(LocalContext.current).data(product.thumbnail)
             .size(Size.ORIGINAL).build()
@@ -155,3 +161,4 @@ fun Product(product: Product) {
 
     }
 }
+
